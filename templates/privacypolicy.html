@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Privacy Policy - GamePoint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-links-container">
+            <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='gplogo.png')}}" class="logo-link"></a>
+            <div class="links-container">
+                <a href="{{url_for('create_game')}}" class="links">Create Game</a>
+                <a href="{{url_for('find_game')}}" class="links">Find Game</a>
+                <a href="{{url_for('about')}}" class="links">About Us</a>            
+                <button class="links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="mobile-menu">
+        <a href="{{url_for('create_game')}}" class="mobile-links">Create Game</a>
+        <a href="{{url_for('find_game')}}" class="mobile-links">Find Game</a>
+        <a href="{{url_for('about')}}" class="mobile-links">About Us</a>
+        <button class="mobile-links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+    </div>
+    <div class="content-wrapper">
+        <div class="privacy-section">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. It is GamePoint's policy to respect your privacy regarding any information we may collect from you across our website, and other sites we may own and operate.</p>
+            <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+            <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.</p>
+            <p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
+            <p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
+            <p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
+            <p>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+            <p>This policy is effective as of 1 January 2023.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="{{ url_for('logout') }}">Logout</a> <span>|</span>
+            <a href="{{ url_for('create_game') }}">Create Game</a> <span>|</span>
+            <a href="{{ url_for('find_game') }}">Find Game</a> <span>|</span>
+            <a href="{{url_for('about')}}">About Us</a> <span>|</span>
+            <a href="#">Privacy Policy</a> <span>|</span>
+            <a href="#">Terms of Use</a>
+        </div>
+        © 2023 GamePoint. All rights reserved.
+    </div>
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = 'none';
+        hamburgerMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'flex';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="login">
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <title>Login</title>
+    </head>
+    <body class="login">
+        <h1>Login To Start Joining HoopUp Games</h1>
+        <div class="login-surround">
+        <div class="login-container">
+            <form method="POST" action="{{url_for('login')}}">
+                <h1 class="login-headings">Login</h1>
+                <p id="error-message">{{error}}</p>
+                <label>Username:</label>
+                <input id="username" placeholder="Username" type="text" name="username" required>
+                <label>Password:</label>
+                <input id="password" placeholder="Password" type="password" name="password" required>
+                <input id="submit" type="Submit" value="Login">
+            </form>
+        </div>
+
+        <div class="login-container signup-container">
+            <form method="POST" action="{{url_for('signup')}}">
+                <h1 class="login-headings">Don't Have an Account? Sign Up!</h1>
+                <label>Username:</label>
+                <input id="signup-username" placeholder="Username" type="text" name="username" required>
+                <label>Password:</label>
+                <input id="signup-password" placeholder="Password" type="password" name="password" required>
+                <label>Confirm Password:</label>
+                <input id="signup-confirm-password" placeholder="Confirm Password" type="password" name="confirm-password" required>
+                <input id="signup-submit" type="Submit" value="Signup">
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

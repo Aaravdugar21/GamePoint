@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <title>HoopUp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+        <div class="navbar">
+            <div class="logo-links-container">
+            <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='gplogo.png')}}" class="logo-link"></a>
+            <div class="links-container">
+            <a href="{{url_for('create_game')}}" class="links">Create Game</a>
+            <a href="{{url_for('find_game')}}" class="links">Find Game</a>
+            <a href="{{url_for('about')}}" class="links">About Us</a>            
+            <button class="links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+        </div>
+        </div>
+        </div>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="mobile-menu">
+            <a href="{{url_for('create_game')}}" class="mobile-links">Create Game</a>
+            <a href="{{url_for('find_game')}}" class="mobile-links">Find Game</a>
+            <a href="{{url_for('about')}}" class="mobile-links">About Us</a>
+            <button class="mobile-links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="about-section">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to GamePoint! We are a passionate community of sports enthusiasts who love to
+                    connect people through pickup games. Our goal is to make it easier for you to find and join
+                    basketball, soccer, and other sports games in your area.
+                </p>
+                <p>
+                    With GamePoint, you can create your own games or join existing ones. Whether you're a seasoned
+                    player or just getting started, there's a game for everyone. Our platform is designed to bring
+                    players together, foster friendly competition, and promote an active lifestyle.
+                </p>
+                <p>
+                    We believe in the power of sports to bring people together and build lasting connections. Join
+                    GamePoint today and be a part of our growing community of sports enthusiasts.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="{{ url_for('logout') }}">Logout</a> <span>|</span>
+                <a href="{{ url_for('create_game') }}">Create Game</a> <span>|</span>
+                <a href="{{ url_for('find_game') }}">Find Game</a> <span>|</span>
+                <a href="{{url_for('about')}}">About Us</a> <span>|</span>
+                <a href="{{url_for('privacy_policy')}}">Privacy Policy</a> <span>|</span>
+                <a href="{{url_for('terms_of_use')}}">Terms of Use</a>
+            </div>
+            © 2023 GamePoint. All rights reserved.
+        </div>
+
+        </body>
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = 'none';
+        hamburgerMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'flex';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
+</html>

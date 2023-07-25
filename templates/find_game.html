@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Create Game</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-links-container">
+        <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='gplogo.png')}}" class="logo-link"></a>
+        <div class="links-container">
+        <a href="{{url_for('create_game')}}" class="links">Create Game</a>
+        <a href="{{url_for('find_game')}}" class="links">Find Game</a>
+        <a href="{{url_for('about')}}" class="links">About Us</a>            
+        <button class="links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+    </div>
+    </div>
+    </div>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="mobile-menu">
+            <a href="{[url_for('create_game')]}" class="mobile-links">Create Game</a>
+            <a href="{{url_for('find_game')}}" class="mobile-links">Find Game</a>
+            <a href="{{url_for('about')}}" class="mobile-links">About Us</a>
+            <button class="mobile-links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+        </div>
+    <div class="available-container">
+        <h2>Available Games</h2>
+        {% if games %}
+        {% for game in games %}
+        <div class="pickup-game">
+            <h2>{{game.sport}} Game</h2>
+            <h4>Requirement: {{ game.requirement }}</h4>
+            <p><strong>Name:</strong> {{ game.name }}</p>
+            <p><strong>Phone:</strong> {{ game.phone }}</p>
+            <p><strong>Email:</strong> {{ game.email }}</p>
+            <p><strong>Level:</strong> {{ game.level }}</p>
+            <p><strong>Address:</strong> {{ game.address }}</p>
+            <p><strong>State:</strong> {{ game.state }}</p>
+            <p><strong>City:</strong> {{ game.city }}</p>
+            <p><strong>ZIP Code:</strong> {{ game.zip }}</p>
+            <p><strong>Date:</strong> {{ game.date }}</p>
+            <p><strong>Time:</strong> {{ game.time }}</p>
+            <p><strong>Description:</strong> {{ game.description }}</p>
+
+            
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="pickup-game">
+        <h3>No Available Games Found</h3>
+        <h2>Check back again later!</h2>
+
+        <p>You can also create your own game <a href="{{url_for('create_game')}}">here</a>.</p>
+    </div>
+
+    <div class="pickup-game">
+        <h3>Still not seeing a game?</h3>
+
+        <p>Start your own game. You can start any game by creating one and choosing a location that fits you best.</p>
+    </div>
+
+    <div class="pickup-game">
+        <h3>How To Create A Game</h3>
+
+        <p>You can create a game under the Create Game tab. Fill in all of the inputs and make sure to double check before you create the game because it will be permanent here until the date of the game passes.</p>
+    </div>
+
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="{{ url_for('logout') }}">Logout</a> <span>|</span>
+            <a href="{{ url_for('create_game') }}">Create Game</a> <span>|</span>
+            <a href="{{ url_for('find_game') }}">Find Game</a> <span>|</span>
+            <a href="{{url_for('about')}}">About Us</a> <span>|</span>
+            <a href="{{url_for('privacy_policy')}}">Privacy Policy</a> <span>|</span>
+            <a href="{{url_for('terms_of_use')}}">Terms of Use</a>
+        </div>
+        © 2023 GamePoint. All rights reserved.
+    </div>
+
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = 'none';
+        hamburgerMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'flex';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

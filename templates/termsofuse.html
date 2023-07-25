@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Terms of Use - GamePoint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-links-container">
+        <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='gplogo.png')}}" class="logo-link"></a>
+        <div class="links-container">
+        <a href="{{url_for('create_game')}}" class="links">Create Game</a>
+        <a href="{{url_for('find_game')}}" class="links">Find Game</a>
+        <a href="{{url_for('about')}}" class="links">About Us</a>            
+        <button class="links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+    </div>
+    </div>
+    </div>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="mobile-menu">
+            <a href="{[url_for('create_game')]}" class="mobile-links">Create Game</a>
+            <a href="{{url_for('find_game')}}" class="mobile-links">Find Game</a>
+            <a href="{{url_for('about')}}" class="mobile-links">About Us</a>
+            <button class="mobile-links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+        </div>
+
+    <div class="content-wrapper">
+        <div class="terms-section">
+            <h2>Terms of Use</h2>
+            <p>
+                These terms and conditions ("Terms") govern your use of the GamePoint website ("Website")
+                and any related services provided by GamePoint ("Service"). By accessing or using the Website
+                or Service, you agree to be bound by these Terms.
+            </p>
+            <p>
+                1. Use of Service: You must be at least 18 years old or have parental consent to use the Service.
+                You agree not to use the Service for any illegal or unauthorized purpose. You are solely
+                responsible for your interactions with other users and any content you post on the Website.
+            </p>
+            <p>
+                2. Intellectual Property: All content on the Website, including but not limited to text, graphics,
+                logos, images, and software, is the property of GamePoint and is protected by copyright and other
+                intellectual property laws. You may not reproduce, modify, distribute, or otherwise use any of the
+                content without our written permission.
+            </p>
+            <p>
+                3. Privacy: Your use of the Service is subject to our Privacy Policy, which explains how we collect,
+                use, and disclose your information. By using the Service, you consent to the practices described in
+                the Privacy Policy.
+            </p>
+            <p>
+                4. Disclaimer of Warranty: The Service is provided on an "as is" and "as available" basis without any
+                warranty or condition, express, implied, or statutory. GamePoint does not guarantee that the Service
+                will be error-free or uninterrupted, and we disclaim any warranties of merchantability, fitness for
+                a particular purpose, and non-infringement.
+            </p>
+            <p>
+                5. Limitation of Liability: In no event shall GamePoint be liable for any direct, indirect, incidental,
+                special, or consequential damages arising out of or in connection with your use of the Service. Your
+                sole and exclusive remedy for dissatisfaction with the Service is to stop using it.
+            </p>
+            <p>
+                6. Indemnification: You agree to indemnify and hold GamePoint harmless from any claims, losses,
+                liabilities, expenses, and damages, including attorneys' fees, arising out of your use of the Service,
+                violation of these Terms, or violation of any rights of another person or entity.
+            </p>
+            <p>
+                7. Modification of Terms: GamePoint reserves the right to modify these Terms at any time without notice.
+                By continuing to use the Service after any such changes, you agree to be bound by the revised Terms.
+            </p>
+            <p>
+                8. Governing Law: These Terms shall be governed by and construed in accordance with the laws of [Your
+                Country/State], without regard to its conflicts of law principles.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="{{ url_for('logout') }}">Logout</a> <span>|</span>
+            <a href="{{ url_for('create_game') }}">Create Game</a> <span>|</span>
+            <a href="{{ url_for('find_game') }}">Find Game</a> <span>|</span>
+            <a href="{{url_for('about')}}">About Us</a> <span>|</span>
+            <a href="{{url_for('privacy_policy')}}">Privacy Policy</a> <span>|</span>
+            <a href="{{url_for('terms_of_use')}}">Terms of Use</a>
+        </div>
+        © 2023 GamePoint. All rights reserved.
+    </div>
+
+    <script>
+        // JavaScript for the hamburger menu
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = 'none';
+        hamburgerMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'flex';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

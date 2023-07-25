@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@700&family=Montserrat:wght@200;300&family=Nunito&family=Nunito+Sans&family=Poppins&family=Raleway&family=Roboto&family=Work+Sans:wght@700&display=swap');
+body{
+    transition:2s all ease;
+}
+
+/* CSS for login.html */
+
+.login-headings{
+    font-family:"Inter",sans-serif;
+    text-align:center;
+    transition:2s all ease;
+}
+
+.login > h1{
+    font-family:"Inter",sans-serif;
+    text-align:center;
+}
+
+.login{
+    height:90%;
+}
+
+.login-surround{
+    display:flex;
+    justify-content:space-around;
+}
+
+.login-container, .signup-container{
+    width:30%;
+    -webkit-box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+    margin-top:4%;
+    height:500px;
+    margin-left:2%;
+}
+
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+#username, #password, #signup-username, #signup-password, #signup-confirm-password{
+    font-family:"Montserrat",sans-serif;
+    width:50%;
+    margin-left:25%;
+    padding:2%;
+    margin-bottom:4%;
+    transition:2s all ease;
+    border:1px solid #ff0059;
+}
+
+#username:focus, #username:active, #password:focus, #password:active, #signup-username:focus, #signup-username:active, #signup-password:focus, #signup-password:active, #signup-confirm-password:focus, #signup-confirm-password:active{
+    outline:none;
+}
+
+label{
+    font-family:"Inter",sans-serif;
+    margin-left:25%;
+    font-size:16px;
+    transition:2s all ease;
+    color:#ff0059;
+}
+
+#submit, #signup-submit{
+    color:#ff0059;
+    background-color:white;
+    border:1px solid #ff0059;
+    padding:3%;
+    width:55%;
+    margin-left:25%;
+    transition:2s all ease;
+    font-family:"Inter",sans-serif;
+}
+
+#submit:hover{
+    background-color:#ff0059;
+    color:white;
+}
+
+#error-message{
+    font-family:"Inter", sans-serif;
+    text-align:center;
+}
+
+
+
+
+
+
+/* End CSS for login.html */
+
+/* CSS for index.html */
+
+/* Other CSS styles ... */
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-section{
+    width:80%;
+    margin-left:10%;
+    margin-top:5%;
+    -webkit-box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+}
+
+
+.welcome-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.welcome-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family:"Lexend",sans-serif;
+}
+
+.welcome-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family:"Oxygen",sans-serif;
+}
+
+.pricing-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.pricing-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family:"Lexend",sans-serif;
+
+}
+
+.pricing-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family:"Oxygen",sans-serif;
+}
+
+/* Other CSS styles ... */
+
+
+/* Other CSS styles ... */
+
+
+/* Other CSS styles ... */
+
+
+
+/* ... Other CSS styles ... */
+
+.navbar {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height:100px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-left: 20px;
+    text-decoration:none;
+    color:black;
+}
+
+h1 > a {
+    color:black;
+}
+
+a{
+    text-decoration:none;
+}
+
+.links-container {
+    display: flex;
+    align-items: center; /* Vertically align items in the links-container */
+    margin-left:700px;
+}
+
+.logo-link{
+    height:200px;
+    margin-top:30px;
+}
+
+.logo-links-container {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 30px; /* Add some space between links */
+}
+
+.logout-button {
+    background-color: #ff0059;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logout-button > a {
+    text-decoration: none;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: #ff003d; /* Slightly darker color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow on hover */
+}
+
+/* make it responsive here*/
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 1000px) {
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        position: fixed; /* Change to fixed to position it relative to the viewport */
+        top: 10px; /* Adjust the top and right values to position it */
+        right: 10px;
+        z-index: 9999;
+    }
+
+    .links-container {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        background-color:#ffffff;
+        -webkit-box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 29px -7px rgba(0,0,0,0.75);
+        top: 100%; /* Remove position:absolute and use top property */
+        right: 0; /* Align to the right side of the screen */
+        width: 100%;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-links {
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family:"Inter",sans-serif;
+    }
+}
+
+
+/* create_game.html */
+/* Your existing CSS styles ... */
+
+/* CSS for the Pickup Game Finder Section */
+input:focus, input:active{
+    outline:none;
+}
+
+.pickup-game-creator {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.pickup-game-creator h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: "Lexend", sans-serif;
+}
+
+.pickup-game-creator form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pickup-game-creator label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-family: "Inter", sans-serif;
+    color: #ff0059;
+}
+
+.pickup-game-creator input[type="text"],
+.pickup-game-creator input[type="date"],
+.pickup-game-creator input[type="time"],
+.pickup-game-creator input[type="phone"],
+.pickup-game-creator input[type="email"],
+.pickup-game-creator select,
+.pickup-game-creator select{
+    font-family: "Montserrat", sans-serif;
+    width:50%;
+    margin-left:25%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff0059;
+}
+
+
+.pickup-game-creator textarea {
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff0059;
+    resize: vertical;
+    width:50%;
+    margin-left:25%;
+}
+
+.pickup-game-creator input[type="submit"] {
+    color: #ff0059;
+    background-color: white;
+    border: 1px solid #ff0059;
+    padding: 10px 20px;
+    width: 50%;
+    margin-left: 25%;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    transition: all 2s ease;
+}
+
+textarea:focus, textarea:active{
+    outline:none;
+}
+
+.pickup-game-creator input[type="submit"]:hover {
+    background-color: #ff0059;
+    color: white;
+}
+
+/* Your existing CSS styles ... */
+
+/* end create_game.html */
+
+/* find_game.html */
+.available-container {
+    font-family: "Inter", sans-serif;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.pickup-game {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 32px -3px rgba(0,0,0,0.75);
+}
+
+.pickup-game h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: "Lexend", sans-serif;
+}
+
+.pickup-game p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-family: "Inter", sans-serif;
+    color: #ff0059;
+}
+
+strong{
+    color:black;
+}
+
+.available-container{
+    transition:2s all ease;
+}
+
+/* end find_game.html */
+
+/* CSS for the footer section */
+
+body{
+    margin:0;
+}
+.footer {
+    background-color: #ff0059;
+    padding: 20px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 5px;
+    transition:1s all ease;
+}
+
+.footer a:hover {
+    color: #ff9c9c;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none; /* Remove default list styles */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+    }
+
+    .footer-links li {
+        margin-bottom: 10px; /* Add some spacing between the links */
+    }
+
+    .footer-links a {
+        text-decoration: none; /* Remove underline */
+    }
+
+    .footer-links span{
+        display:none;
+    }
+}
+
+
+/* css for about.html */
+.about-section {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: "Lexend", sans-serif;
+}
+
+.about-section p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-family: "Oxygen", sans-serif;
+}
+
+/* end of CSS for the About Us page */
+
+
+/*terms of use and privacy policy */
+.terms-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-family: "Lexend", sans-serif;
+}
+
+.terms-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.terms-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.privacy-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-family: "Lexend", sans-serif;
+}
+
+.privacy-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.privacy-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
