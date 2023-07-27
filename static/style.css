@@ -248,7 +248,7 @@ a{
 }
 
 /* Media query for responsiveness */
-@media (max-width: 1000px) {
+@media (max-width: 1500px) {
     .hamburger-menu {
         display: block;
         cursor: pointer;
