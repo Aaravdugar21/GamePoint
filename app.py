@@ -69,10 +69,6 @@ def find_game():
         delete_expired_games()
         database = get_game_db()
         sql = database.cursor()
-        sql.execute('DELETE * FROM games where level=intermediate')
-        connection.commit()
-        database = get_game_db()
-        sql = database.cursor()
         result = sql.execute('''SELECT * FROM games''')
         columns = [column[0] for column in result.description]
         games = [dict(zip(columns, row)) for row in result.fetchall()]
