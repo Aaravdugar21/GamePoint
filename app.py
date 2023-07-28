@@ -67,7 +67,10 @@ def find_game():
     if session.get('logged_in'):
         # Delete expired games before displaying the available ones
         delete_expired_games()
-
+        database = get_game_db()
+        sql = database.cursor()
+        sql.execute('DELETE * FROM games where level=intermediate')
+        connection.commit()
         database = get_game_db()
         sql = database.cursor()
         result = sql.execute('''SELECT * FROM games''')
