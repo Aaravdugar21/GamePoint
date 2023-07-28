@@ -62,3 +62,8 @@ def add_new_game(sport, requirement, name, phone, email, level, address, city, s
     sql.execute('''INSERT INTO games (sport, requirement, name, phone, email, level, address, city, state, zip, date, time, description) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ''', [sport, requirement, name, phone, email, level, address, city, state, zip, date, time, description])
     database.commit()
     return "Successfully Created Game"
+
+def delete_game_with_name(input_name):
+    database = get_game_db()
+    sql = database.cursor()
+    sql.execute('''DELETE FROM games WHERE name=?''',[input_name])
