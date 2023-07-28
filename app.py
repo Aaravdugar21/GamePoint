@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, session, request, redirect
-from users import create_account, check_account, create_table, create_table_for_games, add_new_game
+from users import create_account, check_account, create_table, create_table_for_games, add_new_game, delete_game_with_name
 from database import get_db, get_game_db, close_db, close_game_db
 from datetime import datetime
 
@@ -66,6 +66,7 @@ def logout():
 def find_game():
     if session.get('logged_in'):
         # Delete expired games before displaying the available ones
+        delete_game_with_name("Monica Kim")
         delete_expired_games()
         database = get_game_db()
         sql = database.cursor()
