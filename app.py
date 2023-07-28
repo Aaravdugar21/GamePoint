@@ -66,7 +66,6 @@ def logout():
 def find_game():
     if session.get('logged_in'):
         # Delete expired games before displaying the available ones
-        delete_game_with_name("Monica Kim")
         delete_expired_games()
         database = get_game_db()
         sql = database.cursor()
