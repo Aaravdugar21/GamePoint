@@ -14,10 +14,12 @@ body{
 .login > h1{
     font-family:"Inter",sans-serif;
     text-align:center;
+    color:#ff0059;
 }
 
 .login{
     height:90%;
+    background-image:url("basketballbg.png");
 }
 
 .login-surround{
@@ -33,6 +35,7 @@ body{
     margin-top:4%;
     height:500px;
     margin-left:2%;
+    background-color:rgba(255, 255, 255, 0.7);
 }
 
 
