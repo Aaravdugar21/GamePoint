@@ -21,7 +21,8 @@ body{
     height:90%;
     background-image:url("basketballbg.jpg");
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:contain;
+    background-color:black;
 }
 
 .login-surround{
