@@ -1,36 +1,100 @@
 <!DOCTYPE html>
-<html class="login">
+<html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-        <title>Login</title>
+        <title>GamePoint</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body class="login">
-        <h1>Login To Join GamePoint</h1>
-        <div class="login-surround">
-        <div class="login-container">
-            <form method="POST" action="{{url_for('login')}}">
-                <h1 class="login-headings">Login</h1>
-                <p id="error-message">{{error}}</p>
-                <label>Username:</label>
-                <input id="username" placeholder="Username" type="text" name="username" required>
-                <label>Password:</label>
-                <input id="password" placeholder="Password" type="password" name="password" required>
-                <input id="submit" type="Submit" value="Login">
-            </form>
+    <body>
+        
+        <div class="navbar">
+            <div class="logo-links-container">
+                <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='gplogo.png')}}" class="logo-link" alt="GamePoint Logo"></a>
+                <div class="links-container">
+                    <a href="{{url_for('create_game')}}" class="links">Create Game</a>
+                    <a href="{{url_for('find_game')}}" class="links">Find Game</a>
+                    <a href="{{url_for('about')}}" class="links">About Us</a>            
+
+                   
+                    {% if session.get('logged_in') %}
+                        <button class="links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+                    {% else %}
+                        <button class="links login-button" style="background-color: #ff003d; color: white;"><a href="{{url_for('login')}}">Login</a></button>
+                    {% endif %}
+                </div>
+            </div>
         </div>
 
-        <div class="login-container signup-container">
-            <form method="POST" action="{{url_for('signup')}}">
-                <h1 class="login-headings">Don't Have an Account? Sign Up!</h1>
-                <label>Username:</label>
-                <input id="signup-username" placeholder="Username" type="text" name="username" required>
-                <label>Password:</label>
-                <input id="signup-password" placeholder="Password" type="password" name="password" required>
-                <label>Confirm Password:</label>
-                <input id="signup-confirm-password" placeholder="Confirm Password" type="password" name="confirm-password" required>
-                <input id="signup-submit" type="Submit" value="Signup">
-            </form>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-    </div>
+
+        <div class="mobile-menu">
+            <a href="{{url_for('create_game')}}" class="mobile-links">Create Game</a>
+            <a href="{{url_for('find_game')}}" class="mobile-links">Find Game</a>
+            <a href="{{url_for('about')}}" class="mobile-links">About Us</a>
+
+            <!-- Show Login or Logout in the mobile menu based on session -->
+            {% if session.get('logged_in') %}
+                <button class="mobile-links logout-button"><a href="{{url_for('logout')}}">Logout</a></button>
+            {% else %}
+                <button class="mobile-links login-button" style="background-color: #ff003d; color: white;"><a href="{{url_for('login')}}">Login</a></button>
+            {% endif %}
+        </div>
+        
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2>Welcome to GamePoint</h2>
+            <p>
+                Welcome to GamePoint! Here, you can create and find pickup games to join. Join our community to start taking your pickup games to the next level. If you are interested in a demo, please contact us and we'll try to provide a demo as best as we can. Thanks for using GamePoint to take your pickup games to the next level. 
+            </p>
+            <p>Currently, our GamePoint family has reached over 800 members and growing, across states like New York and Texas. We have raised over $1k to fund its mission to bridge the gap between the player and game and are persistent in our efforts to improve pickup sports.</p>
+            <p>
+                You can create a pickup game for any sport. If there's a sport that you're interested in but it's not an option, please email sharpkeen88@gmail.com and we'll try to add your sport as soon as possible.
+            </p>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="welcome-section">
+            <h2>Pricing</h2>
+            <p>
+                As of now, creating and joining pickup games is completely free. Feel free to create as many pickup games as you'd like. We might add a subscription feature down the road but if you already have an account, you're good for now!
+            </p>
+            <p>
+                Start creating pickup games now for free and take your games to the next level.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                {% if session.get('logged_in') %}
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+                <span>|</span>
+                <a href="{{ url_for('create_game') }}">Create Game</a> <span>|</span>
+                <a href="{{ url_for('find_game') }}">Find Game</a> <span>|</span>
+                <a href="{{url_for('about')}}">About Us</a> <span>|</span>
+                <a href="{{url_for('privacy_policy')}}">Privacy Policy</a> <span>|</span>
+                <a href="{{url_for('terms_of_use')}}">Terms of Use</a>
+            </div>
+        </div>
+
     </body>
+       
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = 'none';
+        hamburgerMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'flex';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
 </html>
