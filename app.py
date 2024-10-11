@@ -24,10 +24,12 @@ def delete_expired_games():
 
 @app.route("/")
 def index():
+    # Print the session data for debugging
+    print("Session:", session)  # Debugging line
     if session.get('logged_in'):
         return render_template("index.html")
     else:
-        return redirect(url_for('login'))
+        return render_template("index.html")  # Show the homepage even if not logged in
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -37,8 +39,8 @@ def login():
         password = request.form['password']
         login_successful = check_account(username, password)
         if login_successful:
-            session['logged_in'] = True
-            return redirect(url_for('index'))
+            session['logged_in'] = True  # Set the session variable
+            return redirect(url_for('index'))  # Redirect to home after successful login
         else:
             error = "Wrong Username or Password"
     return render_template('login.html', error=error)
@@ -59,13 +61,12 @@ def signup():
 
 @app.route("/logout")
 def logout():
-    session['logged_in'] = False
-    return redirect(url_for('login'))
+    session.clear()  # Clear all session data
+    return redirect(url_for('index'))  # Redirect to homepage
 
 @app.route("/find_game")
 def find_game():
     if session.get('logged_in'):
-        # Delete expired games before displaying the available ones
         delete_expired_games()
         database = get_game_db()
         sql = database.cursor()
@@ -107,26 +108,17 @@ def create_game_action():
     add_new_game(sport, requirement, name, phone, email, level, address, state, city, zip, date, time, description)
     return redirect(url_for('find_game'))
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 @app.route("/about")
 def about():
-    if session.get('logged_in'):
-        return render_template("about.html")
-    else:
-        return redirect(url_for('login'))
-    
+    return render_template("about.html")  # Always accessible, may require login for certain features
+
 @app.route("/terms-of-use")
 def terms_of_use():
-    if session.get('logged_in'):
-        return render_template("termsofuse.html")
-    else:
-        return redirect(url_for('login'))
-    
+    return render_template("termsofuse.html")  # Always accessible, may require login for certain features
+
 @app.route("/privacy-policy")
 def privacy_policy():
-    if session.get('logged_in'):
-        return render_template("privacypolicy.html")
-    else:
-        return redirect(url_for('login'))
+    return render_template("privacypolicy.html")  # Always accessible, may require login for certain features
+
+if __name__ == "__main__":
+    app.run(debug=True)
